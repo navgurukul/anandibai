@@ -1,0 +1,20 @@
+language: node_js
+os: linux
+dist: bionic
+node_js:
+  12
+before_script:
+  - npm run clean && npm install
+env:
+  global:
+    secure: rHNMXpXwlGHNVgX19xeo2CmZdZ9Hzv9Tjf0EumgRkitQxK26bn4nhi4bWD2Go6uEr/s5lr5qBvkE+Vp8AOEcpoGOGOI7krsJWEveYAUiXqy6BrA8CkpiJzXW5sH4gPJF5Z2g4SHqYSxSjpKKF8vBGpXbueFUYtOTKMGW8pa43J1q5QFKD4Z5dHMhXfoOOTutg9U6Aw6VBseBXGYHfa7wou8fQ1X04jPY7wOv73RDOje1OifE1az19hVFMopQ5VeWxI1kxKYjqTH0Gk+Rw7SlRXaBHAo+HniYgrKg658TJH89OmqgxyyAfjsQdIiZSojW9PNlRARs2aixcMDFyzxReTSVtc99lWmZTgIaQYrDTqd5DpgALv4TzEuqisCI05hI9S1Uy3eQ719Yy7glSozBr88PnwvBoGo5felT/exOG+XPEBZ5JX2zSCA7Gf+5+6jZXaM67vL+tATldRdAXRfaRUnQ1nHNmGPnXPvJ0UZKahJ6ItIOPrAyTArj6KD5dV5K2gv1gyIHcIbLjAS8E6eH0xnqvhUlGSB+GSUsttvpwfkf1158YgY/BzPwlfDKEiNta/0VL235iTz/wPSH3IPLMV5VfwcmGKqk9GWmCgsQLgQpfWf4L/h5lTec/z0DK7/jc44FX3XT8j/lABEXp13BazG8GaSJ0YoxQhrA9r/CRLc=
+script: npm run build
+deploy:
+  provider: pages
+  cleanup: false
+  keep_history: true
+  strategy: git
+  local_dir: webapp
+  on:
+    branch: develop
+  edge: true

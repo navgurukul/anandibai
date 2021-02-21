@@ -37,7 +37,7 @@ declare global {
     interface Window {
         mxSendRageshake: (text: string, withLogs?: boolean) => void;
         matrixChat: ReturnType<Renderer>;
-
+        Object: any;
         // electron-only
         electron?: Electron;
 
